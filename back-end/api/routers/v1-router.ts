@@ -5,6 +5,7 @@ import ResponseService from "../Services/ResponseService";
 import prisma from "@constants/prisma-client";
 import UserRepository from "../http/v1-users/Repositories/UserRepository";
 import RegisterUserValidation from "../http/v1-users/Validations/RegisterUserValidation";
+import LoginUserValidation from "../http/v1-users/Validations/LoginUserValidation";
 
 const v1Router = Router();
 
@@ -22,6 +23,12 @@ v1Router.post(
   "/register",
   new RegisterUserValidation(userRepository).validate(),
   userController.registerUser
+);
+
+v1Router.post(
+  "/login",
+  new LoginUserValidation().validate(),
+  userController.loginUser
 );
 
 export default v1Router;
