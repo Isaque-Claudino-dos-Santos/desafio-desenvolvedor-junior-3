@@ -7,6 +7,10 @@ export default class ResponseService {
     });
   }
 
+  async unauthorized<T>(data: T, res: Response) {
+    res.status(200).json({ error: data });
+  }
+
   async ok<T>(data: T, res: Response) {
     res.status(200).json({ data });
   }
