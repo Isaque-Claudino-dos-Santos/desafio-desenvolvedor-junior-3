@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "resolveJsonModule": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./api",
+    "paths": {
+      "@constants/*": ["./api/constants/*"]
+    }
+  },
+  "files": ["./api/index.ts"],
+  "include": ["./api/**/*.ts"],
+  "exclude": ["node_modules"]
+}
